@@ -39,8 +39,8 @@ public static class PedDataController
             return pedData;
         }
         
-        // Only create new data for a human (!) ped if it exists.
-        return (!ped.Exists() || !ped.IsHuman) ? null : new PedData(ped);
+        // Only create new data for a human (!) ped if it exists, and only once the plugin is ready (settings loaded).
+        return (!EntryPoint.PluginReady || !ped.Exists() || !ped.IsHuman) ? null : new PedData(ped);
     }
 
     internal static void Clear()
