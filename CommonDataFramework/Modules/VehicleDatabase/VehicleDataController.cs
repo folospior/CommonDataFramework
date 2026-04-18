@@ -38,7 +38,8 @@ public static class VehicleDataController
         }
 
         // Check PedDataController.cs: GetPedData for further info on this method.
-        return !vehicle.Exists() ? null : new VehicleData(vehicle);
+        // Only create new data once the plugin is ready (settings loaded).
+        return (!EntryPoint.PluginReady || !vehicle.Exists()) ? null : new VehicleData(vehicle);
     }
 
     internal static void Clear()
