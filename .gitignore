@@ -209,6 +209,9 @@ PublishScripts/
 *.nuget.props
 *.nuget.targets
 
+# NuGet CLI binary (downloaded on demand, should not be committed)
+.nuget/nuget.exe
+
 # Microsoft Azure Build Output
 csx/
 *.build.csdef
